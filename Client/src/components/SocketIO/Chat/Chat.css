@@ -1,0 +1,98 @@
+  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Oswald&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+.chatPage{
+    background-color: rgb(39, 31, 31);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.chatContainer{
+    margin-top: 5%;
+    background-color: rgb(243, 237, 237);
+    height: 70%;
+    width: 70%;
+}
+
+.header{
+    background-color: rgb(208, 237, 193);
+    height: 15%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.header>h2{
+    font-size: 2.5rem;
+    color: black;
+    margin-left: 2.5vmax;
+    width: 80%;
+    /* font-family: 'Mukta', sans-serif; */
+    font-family: 'Oswald', sans-serif;
+}
+.header>a{
+    margin-right: 23px;
+    width: 5%;
+    text-align: center;
+    height: 45%;
+    cursor: pointer;
+}
+.header>img{
+    margin-right: 20px;
+    height: 75%;
+    width: 75%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.header>a:hover{
+    transform: scale(1.2);
+    filter: invert(100%);
+}
+
+.chatBox{
+ height: 70%;
+ box-sizing: border-box;
+}
+
+.inputBox{
+    height: 15%;
+    display: flex;
+}
+
+#chatInput{
+    width: 80%;
+    height: 100%;
+    border: none;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: rgb(227 236 225);;
+    outline: none;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.2vmax;
+    border-top: 0.2vmax solid rgba(41, 41, 41, 0.562);
+}
+
+
+.sendBtn{
+    background-color: rgb(26, 68, 220);
+    color: white;
+    border: none;
+    width: 20%;
+    height: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.sendBtn>img{
+    width: 2.6vmax;
+    filter:brightness(100) invert();
+    transition: all 0.3s;
+}
+.sendBtn:hover{
+    background-color: rgb(110, 131, 227);
+} 
+.sendBtn:hover img{
+    transform: translateX(10px);
+}

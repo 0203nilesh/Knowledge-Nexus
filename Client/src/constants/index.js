@@ -1,0 +1,6 @@
+export const LOGIN= 'LOGIN';
+export const REGISTER= 'REGISTER';
+export const FETCH_ALL_ARTICLES= 'FETCH_ALL_ARTICLES';
+export const FETCH_ALL_BOOK= 'FETCH_ALL_BOOK';
+export const FETCH_ALL_VIDEOS= 'FETCH_ALL_VIDEOS';
+export const FETCH_VIDEO= 'FETCH_VIDEO';

@@ -1,0 +1,10 @@
+.backgroundColor {
+    background-color: rgb(20 21 24);
+}
+body{
+    background-color: rgb(20 21 24);
+}
+.form{
+    display: flex;
+    
+}

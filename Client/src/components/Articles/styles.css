@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+
+.quote{
+    font-size: 17px;
+    font-family: 'Lato', sans-serif;
+}
+.heading{
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+}
+.card-text{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.btn{
+    font-family: 'Mukta', sans-serif;
+}

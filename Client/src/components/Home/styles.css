@@ -1,0 +1,180 @@
+#hero {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    position: relative;
+   z-index: 1;
+   opacity: 1;
+  }
+  .kuch-search {
+    max-width: 530px;
+    margin: auto;
+    position: relative;
+  }
+  .btn{
+  margin: 0px;
+  }
+  .input-group-append:hover{
+    background-color: #85eca4;
+    border-radius: 10px;
+  }
+  
+  #hero:before {
+    content: "";
+    /* background: rgba(11, 11, 11, 0.4); */
+    background: url('../../../public/img/ques.jpg')  ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #hero .container {
+    padding-top: 20px;
+    justify-content:flex-start;
+    text-align:center;
+  }
+  
+  @media (max-width: 992px) {
+    #hero .container {
+      padding-top: 62px;
+    }
+  }
+  
+  #hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #85f2b3;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #hero h2 {
+    color: #7df5a1;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+  }
+  
+  #hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin-top: 30px;
+    border: 2px solid #fff;
+    color: #f9cbcb;
+  }
+  
+  #hero .btn-get-started:hover {
+    background: #04e748;
+    border: 2px solid #fcf9f9;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero {
+      height: 100vh;
+    }
+  
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  section {
+    padding: 30px 0;
+    overflow: hidden;
+    background-color: rgb(244, 236, 238);
+  }
+
+
+  /* Popular Course */
+  .course-item {
+    border-radius: 5px;
+    border: 1px solid #eef0ef;
+  }
+  
+  .course-content {
+    padding: 15px;
+  }
+  
+ .course-content h3 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .course-content h3 a {
+    color: #37423b;
+    transition: 0.3s;
+  }
+  
+.course-content h3 a:hover {
+    color: #5fcf80;
+  }
+  
+  .course-content p {
+    font-size: 14px;
+    color: #777777;
+  }
+  
+   .course-content h4 {
+    font-size: 14px;
+    background: #72db92;
+    padding: 7px 14px;
+    color: #fff;
+    margin: 0;
+  }
+   .course-content h4:hover {
+    background: #83c597;
+   cursor: pointer;
+  }
+  
+ .course-content .price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    color: #37423b;
+  }
+  
+  .trainer {
+    padding-top: 15px;
+    border-top: 1px solid #eef0ef;
+  }
+  
+  .trainer .trainer-profile img {
+    max-width: 50px;
+    border-radius: 50px;
+  }
+  
+ .trainer .trainer-profile span {
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #5a6c60;
+  }
+  
+  .trainer .trainer-rank {
+    font-size: 18px;
+    color: #657a6d;
+  }
