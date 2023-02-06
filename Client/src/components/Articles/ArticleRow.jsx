@@ -1,9 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Article } from './Article'
+import {Loading} from  '../Loading/Loading';
 
 export const ArticleRow = () => {
-  const data= useSelector((state)=> state.articles.articleData.data.data);
+  let data= useSelector((state)=> state.articles.articleData);
+  // if(data.length===0){
+  //   data =JSON.parse(localStorage.getItem("articleData"));
+  // }
   console.log(data);
   return (
     <>
@@ -11,7 +15,12 @@ export const ArticleRow = () => {
       <div className="p-3 border bg-light">
         <div className="container">
             <div className="row gy-3">
-                {data?.map((article)=>{
+                {data.length===0? (<>
+                  <Loading/>
+                  <p className='text-center'>Click on the Article link from the More Action in Navbar.</p>
+                </>) :(
+                  <>
+                  {data?.map((article)=>{
                   return(
                     <>
                       <div className="col d-flex justify-content-center align-items-center">
@@ -20,6 +29,8 @@ export const ArticleRow = () => {
                     </>
                   )
                 })}
+                </>
+                )}
              </div>
             </div>
       </div>

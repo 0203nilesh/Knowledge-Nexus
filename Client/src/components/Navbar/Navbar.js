@@ -1,12 +1,28 @@
 import React, { useState } from 'react';
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { fetch_all_book } from '../../actions/library'
+import { fetch_all_vidoes } from '../../actions/videos';
+import { fetch_all_articles } from '../../actions/articles';
+import { logout } from '../../actions/auth';
+import {Alert}  from '../Alert/Alert';
 
 export default function Navbar() {
-    // const isLogin= useSelector((state)=> state.auth.authData.isLogin);
-    const [isLogin , setIsLogin]= useState(false);
+    const [showAlert, setShowAlert]= useState(false);
+    const navigate= useNavigate();
+    const dispatch= useDispatch();
+    let user=  useSelector((state)=>state.auth) ;
+    if(user.authData===null){
+        user=JSON.parse(localStorage.getItem("user"));
+    }
+    console.log(user);
   return (
     <div>
+        {showAlert && (<>
+            <Alert message={"Actions are in progress"} type={"primary"} />
+        </>)}
       <div id="topp">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid ">
@@ -36,35 +52,44 @@ export default function Navbar() {
                                     More Actions
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="/articles">Articles</a></li>
-                                    <li><a className="dropdown-item" href="/videos">Videos</a></li>
-                                    <li><a className="dropdown-item" href="/library">Library</a></li>
+                                    <li><a className="dropdown-item" href="#" onClick={()=>dispatch(fetch_all_articles(navigate))}>Articles</a></li>
+                                    <li><a className="dropdown-item" href="#" onClick={()=>dispatch(fetch_all_vidoes(navigate))}>Videos</a></li>
+                                    <li><a className="dropdown-item" href="#" onClick={()=>{ dispatch(fetch_all_book(navigate))}}>Library</a></li>
                                     <li>
                                         <hr className="dropdown-divider"/>
                                     </li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>{
+                                        setShowAlert(true);
+                                        setTimeout(()=>{
+                                            setShowAlert(false);
+                                        },3000)
+                                    }} >Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
                         <div className="collapse navbar-collapse justify-content-end" id="my-navbar">
                             <ul className="navbar-nav">
-                               {!isLogin? (<>
+                               {! user?.isLogin? (<>
                                 <a href="/join"><button className='mx-2 btn btn-primary'>Chat with Friends</button></a>
                                 <li className="nav-item">
-                                    <a className="nav-link active" href="/register" onClick={()=>{setIsLogin(true)}} data-toggle="modal" data-target="#signup-modal">
+                                    <a href="/register">
+                                    <button className="nav-link active"  style={{borderRadius: "7px"}}   data-toggle="modal" data-target="#signup-modal">
                                         <i className="fas fa-user"></i>Signup
+                                    </button>
                                     </a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active" href="/" data-toggle="modal" data-target="#login-modal">
+                                <li className="nav-item ps-1" >
+                                    <a href="/">
+                                    <button className="nav-link active " style={{borderRadius: "7px"}} data-toggle="modal" data-target="#login-modal">
                                         <i className="fas fa-sign-in-alt"></i>Login
+                                    </button>
                                     </a>
                                 </li>
                                </>):(<>
                                 <li className="nav-item">
-                                    <a className="nav-link active" href="/"onClick={()=>{setIsLogin(false)}} data-toggle="modal" data-target="#login-modal">
+                                    <button className="nav-link active"  style={{borderRadius: "7px"}} onClick={()=>{dispatch(logout(navigate))}} data-toggle="modal" data-target="#login-modal">
                                         <i className="fas fa-sign-in-alt"></i>Logout
-                                    </a>
+                                    </button>
                                 </li>
                                </>)}
                             </ul>

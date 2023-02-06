@@ -1,41 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
-
 export default function Home() {
-  //Loading Js
-  // window.onload()
-  // let lund = document.getElementById("running");
-
-  function myFunction() {
-    function counter(id, start, end, duration) {
-      let obj = document.getElementById(id),
-        current = start,
-        range = end - start,
-        increment = end > start ? 1 : -1,
-        step = Math.abs(Math.floor(duration / range)),
-        timer = setInterval(() => {
-          current += increment;
-          obj.innerText = current;
-          if (current === end) {
-            clearInterval(timer);
-          }
-        }, step);
+  const [isChange, setIsChange]= useState(false);
+  const [count, setCount]= useState({
+    c1: 0, c2: 0, c3: 0 , c4: 0,
+  })
+  useEffect(()=>{
+    if(count.c1<1500){
+      setIsChange((prev)=>{return !prev});
     }
-    counter("count1", 700, 2100, 100);
-    counter("count2", 0, 55, 3500);
-    counter("count3", 0, 29, 3500);
-    counter("count4", 0, 40, 3500);
-  }
+    setCount((prevValue)=>{ 
+      return {c1: (prevValue.c1+5) % 2100, c2: (prevValue.c2+5)%500, c3: (prevValue.c3+5)%800, c4: (prevValue.c4+5)%200}; 
+    });
+  },[isChange]);
 
-  function LoadingAnimation() {
-    const homePage = document.querySelector("#homeLoading");
-    homePage.style.display = "none";
-    const loadingIcon = document.getElementById("Loader");
-    setTimeout(() => {
-      homePage.style.display = "block";
-      loadingIcon.style.display = "none";
-    }, 1200);
-  }
 
   function likeButton(idName) {
     const likeIcon = document.getElementById(idName);
@@ -49,15 +27,7 @@ export default function Home() {
   }
 
   return (
-    <div onLoad={LoadingAnimation}>
-      <div id="Loader">
-        <div className="preloader-orbit-loading">
-          <div className="cssload-inner cssload-one"></div>
-          <div className="cssload-inner cssload-two"></div>
-          <div className="cssload-inner cssload-three"></div>
-        </div>
-      </div>
-
+    <div>
       <div id="homeLoading">
         <section
           id="hero"
@@ -162,7 +132,6 @@ export default function Home() {
         {/* <!-- Count starts here --> */}
         <section
           className=" py-5 min-vh-40"
-          onMouseOver={myFunction}
           style={{ backgroundColor: "azure" }}
         >
           <div className="container">
@@ -171,19 +140,19 @@ export default function Home() {
               style={{ fontSize: "30px" }}
             >
               <div className="col-md-3">
-                <span id="count1" className="display-4"></span>
+                <span id="count1" className="display-4">{count.c1}</span>
                 <p>Students</p>
               </div>
               <div className="col-md-3">
-                <span id="count2" className="display-4"></span>
+                <span id="count2" className="display-4">{count.c2}</span>
                 <p>Courses</p>
               </div>
               <div className="col-md-3">
-                <span id="count3" className="display-4"></span>
+                <span id="count3" className="display-4">{count.c3}</span>
                 <p>Trainers</p>
               </div>
               <div className="col-md-3">
-                <span id="count4" className="display-4"></span>
+                <span id="count4" className="display-4">{count.c4}</span>
                 <p>Events</p>
               </div>
             </div>

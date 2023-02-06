@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { useDispatch } from 'react-redux';
 import { fetch_video } from '../../actions/videos';
 import { useNavigate } from 'react-router-dom';
 
 export const Video = ({video}) => {
+  const dispatch= useDispatch();
   const navigate= useNavigate();
   return (
     <>
@@ -14,8 +16,8 @@ export const Video = ({video}) => {
                     <h5 className="card-title">{video.name}</h5>
                     <p className="card-text">{`${video.details.slice(0,50)}...`}</p>
                     <button onClick={()=>{
-                      fetch_video(video._id)
-                      navigate("/playvid");
+                        dispatch(fetch_video(video.id, navigate));
+                      ;
                     }} className="btn btn-primary">Watch Now</button>
                   </div>
                 </div>

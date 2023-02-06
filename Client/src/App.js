@@ -14,6 +14,9 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Faq from './components/FAQ/Faq';
 import Schol from './components/Scholarship/Schol';
+import { PlayArticle } from './components/Play/PlayArticle';
+import { PlayBook } from './components/Play/PlayBook';
+import {Loading} from './components/Loading/Loading';
 // import Play from './components/Play/PlayVid';
 
 function App() {
@@ -22,6 +25,7 @@ function App() {
     <Navbar/>
       <Bot/>
     <Routes>
+      <Route path='/loader' element={<Loading/>}  />
       <Route path='/' element={<Login/>}  />
       <Route path='/register' element={<Register/>}  />
       <Route path='/articles' element={<Articles/>}  />
@@ -34,6 +38,8 @@ function App() {
       {/* Abhishek routes */}
         <Route path="/videos"  element={<Videos/>} />
         <Route path="/playvid"  element={<PlayVid/>} />
+        <Route path="/playarticle"  element={<PlayArticle/>} />
+        <Route path="/playbook"  element={<PlayBook/>} />
         <Route path="/faq"  element={<Faq/>} />
         <Route path="/scholarship"  element={<Schol/>} />
       {/* end */}

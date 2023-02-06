@@ -268,7 +268,7 @@ router.get("/videos/get", async (req, res) => {
 });
 
 //Get by ID Method
-router.get("/articles/get/:id", async (req, res) => {
+router.get("/videos/get/:id", async (req, res) => {
   try {
     console.log(req.params.id);
     let info = await Videos.findById(req.params.id);
