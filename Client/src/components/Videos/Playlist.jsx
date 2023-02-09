@@ -1,22 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Video } from './Video'
 import { useSelector } from 'react-redux'
 import { Loading } from '../Loading/Loading'
+import './styles.css';
 
 export const Playlist = () => {
-    const data= useSelector((state)=> state.videos.vidoesData);
-    console.log(data);
+    const {videosData, isLoading}= useSelector((state)=> state.videos);
+    console.log(videosData);
+    if(!videosData.length && !isLoading) return "No Videos";
   return (
     <>
         <div className="col-9">
-      <div className="p-3 playlist border bg-light">
+      <div className="p-3 playlist">
         <div className="container">
-            <div className="row gy-3">
-                {data.length===0? (<>
+            <div className="row gy-5">
+                {isLoading? (<>
+                  <h3 className='text-center'>Wait a Moment</h3>
                   <Loading/>
-                  <p className='text-center'>Click on the Video link from the More Action in Navbar.</p>
                 </>):(<>
-                  {data?.map((video)=>{
+                  {videosData?.map((video)=>{
                   return(
                     <>
                       <div className="col d-flex justify-content-center align-items-center">

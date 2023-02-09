@@ -4,4 +4,21 @@
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
     line-height: 1.8rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero-container{
+    margin: 0;
+    background-color: rgb(68, 72, 72);
+}
+
+.details{
+    margin-left: 110px;
+}
+.video-container{
+    display: flex;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
 }

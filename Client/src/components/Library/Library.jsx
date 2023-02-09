@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Shelf } from './Shelf';
 import { useDispatch } from 'react-redux';
 import './styles.css';
-import { fetch_book_by_search } from '../../actions/library';
+import { fetch_all_book, fetch_book_by_search } from '../../actions/library';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 export const Library = () => {
   const dispatch= useDispatch();
@@ -14,8 +16,12 @@ export const Library = () => {
     event.preventDefault();
     dispatch(fetch_book_by_search(inputText));
   }
+  useEffect(()=>{
+    dispatch(fetch_all_book());
+  },[])
   return (
     <>
+      <Navbar/>
       <div className="main-container  overflow-hidden ">
         <h3 className='heading text-light text-center py-3'>Issue book from our library</h3>
         <p className='quote text-center text-light'>"I have always imagined that Paradise will be a kind of a Library."</p>
@@ -23,8 +29,9 @@ export const Library = () => {
           <input type="search" onChange={changeHandler} value={inputText} name="search" id="search"  placeholder="Search for books"/>
           <button type='submit' className='btn btn-primary' >Search</button>
         </form>
-  <div className="row gy-5 justify-content-center">
+      <div className="row gy-5 justify-content-center">
         <Shelf/>
+        <Footer/>
   </div>
 </div>
     </>

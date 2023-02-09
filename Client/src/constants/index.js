@@ -2,6 +2,10 @@ export const LOGIN= 'LOGIN';
 export const REGISTER= 'REGISTER';
 export const LOGOUT= 'LOGOUT';
 
+export const START_LOADING='START_LOADING';
+export const END_LOADING='END_LOADING';
+
+
 export const FETCH_ALL_ARTICLES= 'FETCH_ALL_ARTICLES';
 export const FETCH_ARTICLE= 'FETCH_ARTICLE';
 export const FETCH_ARTICLE_BY_SEARCH= 'FETCH_ARTICLE_BY_SEARCH';

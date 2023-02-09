@@ -1,8 +1,11 @@
 import React from 'react'
+import Footer from '../Footer/Footer'
+import Navbar from '../Navbar/Navbar'
 
 export default function Faq() {
   return (
     <>
+    <Navbar/>
     <nav aria-label="breadcrumb" className="bread" style={{backgroundColor: "rgb(233, 240, 245)", height:"30px"}}>
     <ol className="breadcrumb">
         <li className="breadcrumb-item">
@@ -201,6 +204,7 @@ export default function Faq() {
     </div>
 </div>
     </div>
+    <Footer/>
     </>
   )
 }

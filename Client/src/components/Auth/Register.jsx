@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React,{useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../../actions/auth';
+import './style.css';
 
 export const Register = () => {
   const navigate= useNavigate();
@@ -50,8 +50,8 @@ export const Register = () => {
     }
   return (
     <>
-      <div className="registraionForm mx-auto" style={{width: "650px"}} >
-       <div className="container  text-light my-5 mx-auto b-2 border border-black rounded-top rounded-bottom py-3">
+      <div className="main-container-reg "  >
+       <div className=" registraionForm text-light my-5 ">
         <h2 className='text-center  mx-auto'> 
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor" className="bi bi-file-lock2" viewBox="0 0 16 16">
   <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
@@ -119,7 +119,7 @@ export const Register = () => {
     <label htmlFor="exampleInputPassword1">Password:</label>
     <input type="password" value={data.password} name='password' className="form-control bg-dark text-light" onChange={changeHandler} id="exampleInputPassword1" placeholder="Password" required/>
   </div>
-  <button type="submit"  className="btn bg-dark text-light" style={{width: "100px", marginLeft: "300px"}}>Submit</button>
+  <button type="submit"  className=" btn-reg  bg-dark text-light" >Submit</button>
 </form>
     </div>
   </div>

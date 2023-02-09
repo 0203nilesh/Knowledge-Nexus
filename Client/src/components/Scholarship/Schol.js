@@ -1,4 +1,6 @@
 import React from 'react'
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 export default function Schol(){
     function showAlert (){
@@ -26,6 +28,7 @@ export default function Schol(){
     }
   return (
     <>
+    <Navbar/>
     <div>
          <section id="popular-courses" className="courses" style={{margin:" 2px"}}>
         <div className="container">
@@ -239,7 +242,7 @@ export default function Schol(){
                 Grab Scholarship</h1>
 
             <div className="row">
-                <div className="col-lg-6 order-1 order-lg-2">
+                <div className="col-lg-6 gfx-3 order-1 order-lg-2">
                     <ol><br/>
                         <img src="img\arr.svg" alt="" style={{height: "21px", paddingRight: "20px"}}/>
                         <span style={{fontSize: "18px", fontWeight:" bold"}}> Attend the Assessment to get
@@ -282,6 +285,7 @@ export default function Schol(){
         </div>
     </section>
     </div>
+    <Footer/>
     </>
   );
 }

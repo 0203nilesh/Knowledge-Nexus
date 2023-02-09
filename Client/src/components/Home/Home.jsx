@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 import "./styles.css";
 export default function Home() {
   const [isChange, setIsChange]= useState(false);
@@ -26,7 +28,8 @@ export default function Home() {
     }
   }
 
-  return (
+  return (<>
+      <Navbar/>
     <div>
       <div id="homeLoading">
         <section
@@ -103,7 +106,7 @@ export default function Home() {
                   <i
                     className="fa-sharp fa-solid fa-circle-check"
                     style={{ color: "rgb(10, 149, 15)" }}
-                  ></i>
+                    ></i>
                   <b>Career Advancement:</b> Mentors can provide guidance on
                   career paths, offer advice on job applications and interviews,
                   and help mentees navigate the job market. <br />
@@ -133,7 +136,7 @@ export default function Home() {
         <section
           className=" py-5 min-vh-40"
           style={{ backgroundColor: "azure" }}
-        >
+          >
           <div className="container">
             <div
               className="row justify-content-center text-center"
@@ -341,5 +344,7 @@ export default function Home() {
         {/* <!-- Why to Choose us Ends --> */}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

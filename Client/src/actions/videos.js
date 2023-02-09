@@ -1,26 +1,28 @@
 import * as api from '../api/index';
-import { FETCH_ALL_VIDEOS, FETCH_VIDEO, FETCH_VIDEO_BY_SEARCH } from '../constants';
+import { END_LOADING, FETCH_ALL_VIDEOS, FETCH_VIDEO, FETCH_VIDEO_BY_SEARCH, START_LOADING } from '../constants';
 
-export const fetch_all_vidoes= (navigate)=> async(dispatch)=>{
+export const fetch_all_vidoes= ()=> async(dispatch)=>{
     try {
+        dispatch({type: START_LOADING});
         let all_video=await api.getVideos();
         all_video= all_video.data.data;
         // console.log(all_video);
         const action= {type: FETCH_ALL_VIDEOS, data: all_video};
         dispatch(action);
-        navigate("/videos");
+        dispatch({type: END_LOADING});
     } catch (error) {
         console.log(error.message);
     }
 }
-export const fetch_video= (id, navigate)=> async(dispatch)=>{
+export const fetch_video= (id)=> async(dispatch)=>{
     try {
+        dispatch({type: START_LOADING});
         let video=await api.getVideo(id);
         video= video.data.data;
         // console.log(video);
         const action= {type: FETCH_VIDEO, data: video};
         dispatch(action);
-        navigate("/playvid");
+        dispatch({type: END_LOADING});
     } catch (error) {
         console.log(error.message);
     }

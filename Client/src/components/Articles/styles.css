@@ -18,3 +18,19 @@
 .btn{
     font-family: 'Mukta', sans-serif;
 }
+.card-img-top{
+    width: 290px;
+    height: 190px;
+}
+
+.articleRow{
+    background-color: rgb(143, 160, 160);
+    border-radius: 15px;
+}
+.main-container{
+    background-color: rgb(73, 73, 81);
+}
+.card{
+    border-radius: 10px;
+    background-color: rgb(214, 222, 222);
+}

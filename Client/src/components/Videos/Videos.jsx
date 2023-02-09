@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { fetch_videos_by_search } from '../../actions/videos';
+import { fetch_all_vidoes, fetch_videos_by_search } from '../../actions/videos';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 import { Playlist } from './Playlist';
 
 export const Videos = () => {
@@ -13,10 +15,13 @@ export const Videos = () => {
     event.preventDefault();
     dispatch(fetch_videos_by_search(inputText));
   }
-
+  useEffect(()=>{
+    dispatch(fetch_all_vidoes());
+  }, [])
 
   return (
     <>
+    <Navbar/>
         <div className="main-container overflow-hidden ">
         <h3 className=' heading text-light text-center pt-2 '>Here are the videos tutorial that will help you.</h3>
         <p className='quote text-center text-light pb-2'>"I have always imagined that Paradise will be a kind of a Library."</p>
@@ -28,6 +33,7 @@ export const Videos = () => {
         <Playlist/>
       </div>
     </div>
+    <Footer/>
     </>
   )
 }

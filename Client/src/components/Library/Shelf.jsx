@@ -2,21 +2,23 @@ import React, { useEffect } from 'react'
 import { Book } from './Book'
 import { useSelector } from 'react-redux'
 import {Loading} from '../Loading/Loading';
+import './styles.css';
 
 export const Shelf = () => {
-    const data= useSelector((state)=>state.library.bookData)
-    console.log(data.length);
+    const {booksData, isLoading}= useSelector((state)=>state.library)
+    console.log(booksData.length);
+    if(!booksData.length && !isLoading) return "No Posts";
   return (
     <>
       <div className="col-9">
-      <div className="p-3 border bg-light">
+      <div className="p-3 shelf">
         <div className="container">
-            <div className="row gy-3">
-                {data?.length===0? (<>
+            <div className="row gy-5">
+                {booksData?.length===0? (<>
+                  <h3 className='text-center'>Wait a Moment</h3>
                   <Loading/>
-                  <p className='text-center'>Click on the Library link from the More Action in Navbar.</p>
                   </>):(<>
-                    {data?.map((book)=>{
+                    {booksData?.map((book)=>{
                   return(
                     <>
                       <div className="col d-flex justify-content-center align-items-center">

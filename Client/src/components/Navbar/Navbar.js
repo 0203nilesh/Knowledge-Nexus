@@ -3,10 +3,8 @@ import './style.css';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { fetch_all_book } from '../../actions/library'
-import { fetch_all_vidoes } from '../../actions/videos';
-import { fetch_all_articles } from '../../actions/articles';
 import { logout } from '../../actions/auth';
+import logo from '../../images/logo.svg';
 import {Alert}  from '../Alert/Alert';
 
 export default function Navbar() {
@@ -26,7 +24,7 @@ export default function Navbar() {
       <div id="topp">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid ">
-                    <img src="img\logo.svg" style={{width: "30px", height: "30px"}}/>
+                    <img src={logo} style={{width: "30px", height: "30px"}}/>
                     <a className="navbar-brand" href="/home">KnowledgeNexus</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -52,9 +50,9 @@ export default function Navbar() {
                                     More Actions
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#" onClick={()=>dispatch(fetch_all_articles(navigate))}>Articles</a></li>
-                                    <li><a className="dropdown-item" href="#" onClick={()=>dispatch(fetch_all_vidoes(navigate))}>Videos</a></li>
-                                    <li><a className="dropdown-item" href="#" onClick={()=>{ dispatch(fetch_all_book(navigate))}}>Library</a></li>
+                                    <li><a className="dropdown-item" href="/articles" >Articles</a></li>
+                                    <li><a className="dropdown-item" href="/videos" >Videos</a></li>
+                                    <li><a className="dropdown-item" href="/library" >Library</a></li>
                                     <li>
                                         <hr className="dropdown-divider"/>
                                     </li>
