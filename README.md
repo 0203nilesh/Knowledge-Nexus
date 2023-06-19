@@ -1,7 +1,7 @@
 # Knowledge-Nexus
 KnowledgeNexus is a dynamic and comprehensive website dedicated to supporting students in their educational journey by providing a wide range of resources, tools, and guidance. The website's name reflects its mission to create a central hub where knowledge meets connectivity, fostering an environment where students can thrive academically and intellectually.
 
-## Homge Page
+## Home Page
 ![image](https://github.com/0203nilesh/Knowledge-Nexus/assets/95562518/c107cb45-d3dc-4ea6-8b0d-2cd033c03041)
 
 ## Login Page
